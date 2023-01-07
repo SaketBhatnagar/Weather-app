@@ -17,7 +17,8 @@ const Fetchdata = () => {
             res1
               .json()
               .then(res => {
-                setData([res]);
+                // data = [res];
+                setData(data);
                 console.log(res);
               })
               .catch(err => console.log(err))
@@ -48,11 +49,13 @@ const Fetchdata = () => {
             list="city"
           />
 
-          <datalist id="city">
+          {/* <datalist id="city">
             {JSON.map(value => {
-              return <option>{value.name}</option>;
+              return (
+                <option key={Math.random() * 2345678}>{value.name}</option>
+              );
             })}
-          </datalist>
+          </datalist> */}
           <button>Get Data</button>
         </form>
 
@@ -70,6 +73,8 @@ const Fetchdata = () => {
             visibility={data[0].current.visibility}
             is_day={data[0].current.is_day}
             date_time={data[0].location.localtime}
+            region={data[0].location.region}
+            country={data[0].location.country}
           ></Card>
         ) : (
           ""

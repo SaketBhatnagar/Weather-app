@@ -13,12 +13,16 @@ const Card = ({
   visibility,
   is_day,
   date_time,
+  region,
+  country,
 }) => {
   return (
     <section className="card-Block">
       <article>
         <div className="r1">
-          <span>{name}</span>
+          <span>
+            {name} , <span>{country}</span>
+          </span>
         </div>
         <div className="r2">
           <div className="img">
